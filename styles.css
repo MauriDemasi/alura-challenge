@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --color-background: #F3F5FC;
+    --color-principal: #0A3871;
+    --color-fuente-secundario: #495057;
+    --White: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: var(--color-background);
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0px 0px 40px;
+}
+
+.header-menu-link img {
+    height: 40px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--color-background);
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+    padding: 20px 0px 0px 150px;
+}
+
+.textarea::placeholder {
+    color: var(--color-principal);
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.input-section textarea {
+    width: 100%;
+    height: 55vh;
+    background-color: var(--color-background);
+    border: none;
+    outline: none;
+    color: var(--color-principal);
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.input-section p {
+    color: var(--color-fuente-secundario);
+    opacity: 0.8;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 15px;
+}
+
+.input-section .buttons,
+.content-container .buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    /* Centra los botones en su contenedor */
+    flex-wrap: wrap;
+    /* Permite que los botones se acomoden en varias líneas si es necesario */
+}
+
+.input-section button,
+.content-container button {
+    width: 328px;
+    height: 55px;
+    /* Asegúrate de que el tamaño del botón sea consistente */
+    padding: 24px;
+    /* Ajustado para consistencia */
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    /* Espaciado alrededor del botón */
+    flex-shrink: 0;
+    /* Evita que los botones se reduzcan más allá de su tamaño mínimo */
+    box-sizing: border-box;
+    /* Asegura que el tamaño incluya el padding */
+}
+
+.input-section button.primary {
+    background-color: var(--color-principal);
+    color: var(--color-background);
+}
+
+.input-section button.secondary,
+.content-container button.secondary {
+    border: 1px solid var(--color-principal);
+    background: #D8DFE8;
+    color: var(--color-principal);
+}
+
+.text-button {
+    flex: 1 0 0;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.output-section {
+    width: 400px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 32px;
+    background: var(--White, #FFF);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    margin: -70px 10px 0px 30px;
+    top: 50%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+.content-container .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.content-container button {
+    width: 328px;
+    height: 55px;
+    padding: 24px;
+    /* Ajustado para consistencia */
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.output-section button {
+    width: 326px;
+    height: 55px;
+    padding: 24px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8DFE8;
+    color: var(--color-principal);
+    position: absolute;
+    bottom: 0.7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.output-section img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.output-section h3,
+.output-section p {
+    margin: 10px 0;
+}
+
+.output-section h3 {
+    color: #343A40;
+    margin-bottom: 10px;
+    align-self: stretch;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.output-section p {
+    color: #555555;
+    text-align: center;
+    align-self: stretch;
+    color: #495057;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    position: relative;
+}
+
+.output-response {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: var(--color-fuente-secundario);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+
+
+
+.footer {
+    height: 2.5rem;
+    background-color: var(--color-fuente-secundario);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1680px) {
+
+    .output-section button.secondary {
+        bottom: 23px;
+
+    }
+}
