@@ -25,6 +25,9 @@ body {
     flex-direction: column;
     background-color: var(--color-background);
     font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: normal;
+
 }
 
 header {
@@ -61,7 +64,6 @@ header {
     justify-content: center;
     align-items: center;
 }
-
 
 .input-section {
     flex: 2;
@@ -111,8 +113,7 @@ header {
     display: flex;
     gap: 8px;
     justify-content: center;
-    /* Centra los botones en su contenedor */
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     /* Permite que los botones se acomoden en varias líneas si es necesario */
 }
 
@@ -120,9 +121,7 @@ header {
 .content-container button {
     width: 328px;
     height: 55px;
-    /* Asegúrate de que el tamaño del botón sea consistente */
     padding: 24px;
-    /* Ajustado para consistencia */
     border-radius: 15px;
     cursor: pointer;
     border: none;
@@ -130,11 +129,8 @@ header {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    /* Espaciado alrededor del botón */
-    flex-shrink: 0;
-    /* Evita que los botones se reduzcan más allá de su tamaño mínimo */
     box-sizing: border-box;
-    /* Asegura que el tamaño incluya el padding */
+    flex-wrap: nowrap;
 }
 
 .input-section button.primary {
@@ -177,17 +173,10 @@ header {
     box-sizing: border-box;
 }
 
-
-.content-container .buttons {
-    display: flex;
-    gap: 8px;
-}
-
 .content-container button {
     width: 328px;
     height: 55px;
     padding: 24px;
-    /* Ajustado para consistencia */
     border-radius: 15px;
     cursor: pointer;
     border: none;
@@ -195,7 +184,6 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 
 .output-section button {
     width: 326px;
@@ -210,18 +198,16 @@ header {
     background-color: #D8DFE8;
     color: var(--color-principal);
     position: absolute;
-    bottom: 0.7px;
+    bottom: 10.7px;
     left: 50%;
     transform: translateX(-50%);
 }
-
 
 .output-section img {
     max-width: 75%;
     height: auto;
     display: block;
     margin: 0 auto;
-
 }
 
 .output-section h3,
@@ -268,9 +254,6 @@ header {
     line-height: 150%;
 }
 
-
-
-
 .footer {
     height: 2.5rem;
     background-color: var(--color-fuente-secundario);
@@ -282,13 +265,105 @@ header {
     margin-top: auto;
 }
 
-
 /* Media Queries */
 
 @media (max-width: 1680px) {
-
     .output-section button.secondary {
         bottom: 23px;
+    }
+}
+
+/* Estilos para tablets con un ancho de 768px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-section {
+        width: 100%;
+        margin: 0px 40px 40px 40px;
+    }
+
+    #buttons-container {
+        flex-wrap: nowrap;
+    }
+
+
+    .output-section img {
+        display: none;
+    }
+
+    .output-section {
+        display: flex;
+        justify-content: center;
+        width: 688px;
+        height: 69px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 40px;
+        padding: 52px;
+        gap: 32px;
+        border-radius: 32px;
+        background: var(--White, #FFF);
+        box-sizing: border-box;
 
     }
+
+    .output-section-text {
+        align-self: stretch;
+        color: var(--Gray-gray-500, #343A40);
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+
+    }
+
+    .output-response {
+        color: #343A40;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        margin: 10px 0;
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    #parrafo {
+        width: 624px;
+        color: var(--Gray-gray-400, #495057);
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    #btnCopiar {
+        width: 100%;
+        max-width: 326px;
+        height: 55px;
+        padding: 24px;
+        border-radius: 15px;
+        cursor: pointer;
+        border: none;
+        background-color: #D8DFE8;
+        color: var(--color-principal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+        box-sizing: border-box;
+
+    }
+
+
 }
