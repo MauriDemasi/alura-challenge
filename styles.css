@@ -15,18 +15,14 @@
 
 html,
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+
     background-color: var(--color-background);
     font-family: 'Inter', sans-serif;
-    margin: 0;
-    line-height: normal;
 
 }
 
@@ -114,7 +110,6 @@ header {
     gap: 8px;
     justify-content: center;
     flex-wrap: nowrap;
-    /* Permite que los botones se acomoden en varias líneas si es necesario */
 }
 
 .input-section button,
@@ -155,7 +150,7 @@ header {
 }
 
 .output-section {
-    width: 400px;
+    width: 380px;
     height: 85vh;
     display: flex;
     flex-direction: column;
@@ -167,7 +162,7 @@ header {
     border-radius: 32px;
     background: var(--White, #FFF);
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    margin: -70px 10px 0px 30px;
+    margin: -70px 30px 0px 30px;
     top: 50%;
     position: relative;
     box-sizing: border-box;
@@ -243,16 +238,39 @@ header {
 
 .output-response {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: start;
     color: var(--color-fuente-secundario);
-    text-align: center;
     font-family: Inter;
-    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word
 }
+
+.button1 {
+    flex: 1;
+    position: relative;
+}
+
+.button {
+    width: 328px;
+    height: 54px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid #0a3871;
+    color: #0a3871;
+    top: 83%;
+    margin-right: 50%;
+}
+
+
 
 .footer {
     height: 2.5rem;
@@ -275,16 +293,21 @@ header {
 
 /* Estilos para tablets con un ancho de 768px */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+    .main-container{
+        justify-content: start;
+    }
+
     .content-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        align-items: start;
     }
 
     .input-section {
-        width: 100%;
-        margin: 0px 40px 40px 40px;
+        margin: 0px 10px 40px -100px;
+        text-align: justify;
+
     }
 
     #buttons-container {
@@ -297,73 +320,44 @@ header {
     }
 
     .output-section {
-        display: flex;
-        justify-content: center;
-        width: 688px;
-        height: 69px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 40px;
-        padding: 52px;
-        gap: 32px;
-        border-radius: 32px;
-        background: var(--White, #FFF);
-        box-sizing: border-box;
-
-    }
-
-    .output-section-text {
-        align-self: stretch;
-        color: var(--Gray-gray-500, #343A40);
-        text-align: center;
-        font-family: Inter;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%;
-
-    }
-
-    .output-response {
-        color: #343A40;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: center;
-        margin: 10px 0;
-        width: 100%;
-        padding: 0 24px;
-    }
-
-    #parrafo {
-        width: 624px;
-        color: var(--Gray-gray-400, #495057);
-        font-family: Inter;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
+        width: 700px;
+        height: auto;
+        position: relative;
         line-height: 150%;
+        display: inline-block;
+        padding: 20px;
+        margin: 20px 40px 0px 45px;
     }
 
-    #btnCopiar {
+    #parrafo{   
+        color: #495057;
+        font-size: 24px;
+        font-family: Inter;
+        font-weight: 400;
+        line-height: 36px;
+        text-align: justify;
+    }
+    
+    .button1 {
+        flex: 1;
+        position: relative;
+    }
+    .button {
         width: 100%;
-        max-width: 326px;
-        height: 55px;
-        padding: 24px;
-        border-radius: 15px;
-        cursor: pointer;
-        border: none;
-        background-color: #D8DFE8;
-        color: var(--color-principal);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 24px;
+        position: relative;
+        border-radius: 24px;
+        border: 1px solid #0a3871;
         box-sizing: border-box;
-
-    }
-
+        display: flex;
+        flex-direction: row;
+        padding: 24px;
+        text-align: center;
+        font-size: 16px;
+        color: #0a3871;
+        font-family: Inter;
+  }
+  
+  
+  
 
 }
