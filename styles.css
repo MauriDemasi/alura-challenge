@@ -226,7 +226,7 @@ header {
     color: #555555;
     text-align: center;
     align-self: stretch;
-    color: #495057;
+    color: var(--color-fuente-secundario) ;
     text-align: center;
     font-family: Inter;
     font-size: 16px;
@@ -264,8 +264,8 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    border: 1px solid #0a3871;
-    color: #0a3871;
+    border: 1px solid var(--color-principal);
+    color:var(--color-principal);
     top: 83%;
     margin-right: 50%;
 }
@@ -323,7 +323,7 @@ header {
     }
 
     #parrafo {
-        color: #495057;
+        color: var(--color-fuente-secundario) ;
         font-size: 24px;
         font-family: Inter;
         font-weight: 400;
@@ -340,14 +340,14 @@ header {
         width: 100%;
         position: relative;
         border-radius: 24px;
-        border: 1px solid #0a3871;
+        border: 1px solid var(--color-principal);
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
         padding: 24px;
         text-align: center;
         font-size: 16px;
-        color: #0a3871;
+        color:var(--color-principal);
         font-family: Inter;
     }
 
@@ -358,8 +358,6 @@ header {
 
 /* Estilos para celulares*/
 @media (max-width: 767px) {
-
-
 
     .header-menu-link .top {
         position: absolute;
@@ -399,6 +397,7 @@ header {
         max-width: 100%;
         align-items: center;
         text-align: center;
+        position: relative;
     }
 
     .primary .secondary {
@@ -427,8 +426,16 @@ header {
         display: inline-block;
     }
 
+    .input-section .buttons,
+    .content-container .buttons {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-direction: row-reverse;
+    }
+
     #parrafo {
-        color: #495057;
+        color: var(--color-fuente-secundario) ;
         font-size: 24px;
         font-family: Inter;
         font-weight: 400;
@@ -445,14 +452,14 @@ header {
         width: 100%;
         position: relative;
         border-radius: 24px;
-        border: 1px solid #0a3871;
+        border: 1px solid var(--color-principal);
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
         padding: 24px;
         text-align: center;
         font-size: 16px;
-        color: #0a3871;
+        color:var(--color-principal);
         font-family: Inter;
     }
 

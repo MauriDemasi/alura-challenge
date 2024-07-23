@@ -8,14 +8,13 @@ function encriptar() {
     .replace(/u/gi, "ufat");
 
   var output = document.getElementsByClassName("output-section")[0];
-  output.innerHTML='';
-  console.log(output);
+  output.innerHTML = "";
 
   var parrafo = document.createElement("p");
   parrafo.classList.add("output-response");
   parrafo.id = "parrafo";
   parrafo.innerHTML = textoEncriptado;
-  
+
   output.appendChild(parrafo);
   output.classList.add("output-response");
 
@@ -31,18 +30,17 @@ function desencriptar() {
     .replace(/ober/gi, "o")
     .replace(/ufat/gi, "u");
 
-    var output = document.getElementsByClassName("output-section")[0];
-    output.innerHTML = ''; 
-    var parrafo = document.createElement("p");
-    parrafo.classList.add("output-response");
-    parrafo.id = "parrafo";
-    parrafo.innerHTML = textoDesencriptado;
-    
-    output.appendChild(parrafo);
-    output.classList.add("output-response");
-  
-    crearBotonCopiar();
+  var output = document.getElementsByClassName("output-section")[0];
+  output.innerHTML = "";
+  var parrafo = document.createElement("p");
+  parrafo.classList.add("output-response");
+  parrafo.id = "parrafo";
+  parrafo.innerHTML = textoDesencriptado;
 
+  output.appendChild(parrafo);
+  output.classList.add("output-response");
+
+  crearBotonCopiar();
 }
 
 // Función para crear el botón de copiar
@@ -61,20 +59,19 @@ function crearBotonCopiar() {
   botonContenedor.onclick = copiar;
 }
 
-
-
 // Función para copiar texto al portapapeles
 function copiar() {
   var texto = document.getElementById("parrafo").textContent;
 
   // Verificar si navigator.clipboard está disponible
   if (navigator.clipboard) {
-    navigator.clipb1oard.writeText(texto)
+    navigator.clipb1oard
+      .writeText(texto)
       .then(() => {
-        alert('Texto copiado en el portapapeles');
+        alert("Texto copiado en el portapapeles");
       })
-      .catch(err => {
-        console.error('Error copying text: ', err);
+      .catch((err) => {
+        console.error("Error copying text: ", err);
       });
   } else {
     // Método alternativo para copiar el texto
@@ -83,10 +80,10 @@ function copiar() {
     document.body.appendChild(textArea);
     textArea.select();
     try {
-      document.execCommand('copy');
-      alert('Texto copiado en el portapapeles');
+      document.execCommand("copy");
+      alert("Texto copiado en el portapapeles");
     } catch (err) {
-      console.error('Error copying text: ', err);
+      console.error("Error copying text: ", err);
     }
     document.body.removeChild(textArea);
   }
@@ -94,15 +91,15 @@ function copiar() {
 
 // funcion para escuchar cada tecla que se presiona y validar que sean solo letras y en minuscula
 function validarTexto(event) {
-  var charCode = event.charCode;
-  if (charCode >= 97 && charCode <= 122 || charCode == 32) {
-    return false;    
-  } else {
+  var input = event.target;
+  var value = input.value;
+  var regex = /^[a-z ]*$/; // Permite solo letras minúsculas y espacios
+
+  if (!regex.test(value)) {
     alert("Solo se permiten letras minúsculas y sin acentos");
-    event.preventDefault();
-    return true;
+    input.value = value.slice(0, -1); // Elimina el último carácter ingresado
   }
 }
 
-//aqui activamos la escucha de la tecla presionada
-document.getElementById("text-input").addEventListener("keypress", validarTexto);
+//aqui activamos la escucha de cada input
+document.getElementById("text-input").addEventListener("input", validarTexto);
