@@ -65,27 +65,15 @@ function copiar() {
 
   // Verificar si navigator.clipboard está disponible
   if (navigator.clipboard) {
-    navigator.clipb1oard
-      .writeText(texto)
-      .then(() => {
-        alert("Texto copiado en el portapapeles");
-      })
-      .catch((err) => {
-        console.error("Error copying text: ", err);
-      });
+    navigator.clipboard.writeText(texto).then(function() {
+      alert('Texto copiado al portapapeles');
+    }).catch(function(error) {
+      console.error('Error al copiar el texto: ', error);
+      //fallbackCopyTextToClipboard(text);
+    });
   } else {
-    // Método alternativo para copiar el texto
-    var textArea = document.createElement("textarea");
-    textArea.value = texto;
-    document.body.appendChild(textArea);
-    textArea.select();
-    try {
-      document.execCommand("copy");
-      alert("Texto copiado en el portapapeles");
-    } catch (err) {
-      console.error("Error copying text: ", err);
-    }
-    document.body.removeChild(textArea);
+    //fallbackCopyTextToClipboard(text);
+    alert("Hubo en error al querer copiar el texto")
   }
 }
 
