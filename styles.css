@@ -283,18 +283,11 @@ header {
     margin-top: auto;
 }
 
-/* Media Queries */
-
-@media (max-width: 1680px) {
-    .output-section button.secondary {
-        bottom: 23px;
-    }
-}
 
 /* Estilos para tablets con un ancho de 768px */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-    .main-container{
+    .main-container {
         justify-content: start;
     }
 
@@ -329,7 +322,7 @@ header {
         margin: 20px 40px 0px 45px;
     }
 
-    #parrafo{   
+    #parrafo {
         color: #495057;
         font-size: 24px;
         font-family: Inter;
@@ -337,11 +330,12 @@ header {
         line-height: 36px;
         text-align: justify;
     }
-    
+
     .button1 {
         flex: 1;
         position: relative;
     }
+
     .button {
         width: 100%;
         position: relative;
@@ -355,9 +349,112 @@ header {
         font-size: 16px;
         color: #0a3871;
         font-family: Inter;
-  }
-  
-  
-  
+    }
+
+
+
+
+}
+
+/* Estilos para celulares*/
+@media (max-width: 767px) {
+
+
+
+    .header-menu-link .top {
+        position: absolute;
+        top: 24px;
+        left: -16px;
+    }
+
+    .main-container {
+        width: auto;
+        margin: 0 auto;
+        padding: 20px;
+        margin-top: 45px;
+    }
+
+    .content-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .input-section {
+        width: 100%;
+        margin-right: 5px;
+        padding: 20px 0px 0px 0px;
+    }
+
+    .input-section p {
+        padding: 15px 0px 15px 0px;
+    }
+
+    #text-input {
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        margin-bottom: 100px;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .primary .secondary {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .output-section {
+        max-width: 100%;
+    }
+
+    #buttons-container {
+        flex-wrap: nowrap;
+    }
+
+
+    .output-section img {
+        display: none;
+    }
+
+    .output-section {
+        height: auto;
+        position: relative;
+        line-height: 150%;
+        display: inline-block;
+    }
+
+    #parrafo {
+        color: #495057;
+        font-size: 24px;
+        font-family: Inter;
+        font-weight: 400;
+        line-height: 36px;
+        text-align: justify;
+    }
+
+    .button1 {
+        flex: 1;
+        position: relative;
+    }
+
+    .button {
+        width: 100%;
+        position: relative;
+        border-radius: 24px;
+        border: 1px solid #0a3871;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        padding: 24px;
+        text-align: center;
+        font-size: 16px;
+        color: #0a3871;
+        font-family: Inter;
+    }
+
 
 }
